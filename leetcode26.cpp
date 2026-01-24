@@ -2,23 +2,22 @@
 using namespace std;
 int main()
 {
+    cout<<"24P-3036"<<endl;
     
-    int arr[]={0,1,2,2,3,0,4,2};
+    int arr[]={1,2,2,3,3,3,4};
     int size=sizeof(arr)/sizeof(arr[0]);
 
-    
     for(int i=0;i<size;i++){
-        if(arr[i]==arr[i+1]){
-
-            int first=arr[i];
-
-            for(int j=i;j<size-1;j++){
-                arr[j]=arr[j+1];
+        for(int j=i+1;j<size;j++){
+            if(arr[i]==arr[j]){
+                int first=arr[j];
+                for(int k=j;k<size-1;k++){
+                    arr[k]=arr[k+1];
+                }
+                arr[size-1]=first;
+                size--;
+                j--;
             }
-            arr[size-1]=first;
-
-            i--;
-            size--;
         }
     }
 
@@ -26,8 +25,6 @@ int main()
         cout<<arr[i]<<" ";
     }
 
-    cout<<endl;
-    cout<<size;
   
 return 0;
 }
