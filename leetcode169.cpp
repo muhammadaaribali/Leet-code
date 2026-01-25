@@ -1,4 +1,5 @@
 #include <iostream>
+#include<unordered_map>
 using namespace std;
 
 int main(){
@@ -6,24 +7,15 @@ int main(){
     int arr[]={3,2,3};
     int size=sizeof(arr)/sizeof(arr[0]);
     int n=size/2; //1
+    unordered_map<int,int> map;
 
-    int count;
+    for(int x:arr){
 
-    for(int i=0;i<size;i++){
+        map[x]++;
 
-        count=0;
-        for(int j=0;j<size;j++){
-
-            if(arr[i]==arr[j]){
-                count++;
-            }
+        if(map[x]>n){
+            cout<<x;
         }
-
-        if(count>n){
-            cout<<"Majority element : "<<arr[i]<<endl;
-            return 0;
-        }
-
     }
 
     
