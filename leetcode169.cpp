@@ -14,7 +14,7 @@ int main(){
         map[x]++;
 
         if(map[x]>n){
-            cout<<x;
+            cout<<x<<endl;
         }
     }
 
